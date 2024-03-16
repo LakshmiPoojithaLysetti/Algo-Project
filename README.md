@@ -32,10 +32,10 @@ Index of the preferred starting city.
 4) Return the index of the preferred starting city.
 
 ## Complexity Analysis:
-Time Complexity: O(n), where n is the number of cities.
-Space Complexity: O(1).
+- Time Complexity: O(n), where n is the number of cities.
+- Space Complexity: O(1).
 
 ## Usage:
-Provide input parameters: city_distances, fuel, and mpg.
-Call the findPreferredStartingCity function with the input parameters.
-Obtain the index of the preferred starting city as the output.
+- Provide input parameters: city_distances, fuel, and mpg.
+- Call the findPreferredStartingCity function with the input parameters.
+- Obtain the index of the preferred starting city as the output.
