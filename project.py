@@ -1,29 +1,33 @@
-def find_starting_city(city_distances, fuel, mpg):
-    total_cities = len(city_distances)
+def find_starting_city(D, F, mpg): 
+#'TC' be the total number of cities 
+    TC = len(D) 
     
-    for start_city in range(total_cities):
-        remaining_fuel = 0
-        current_city = start_city
-        can_complete_journey = True
-        
-        for _ in range(total_cities):
-            remaining_fuel += fuel[current_city] * mpg - city_distances[current_city]
-            
-            if remaining_fuel < 0:
-                can_complete_journey = False
-                break
-            
-            current_city = (current_city + 1) % total_cities
-        
-        if can_complete_journey:
-            return start_city
-    
-    return -1  # No valid starting city found
+# 'SC' be the start city 
+    for SC in range(TC):    
 
-# Sample Input
-city_distances = [5, 25, 15, 10, 15]
-fuel = [1, 2, 1, 0, 3]
-mpg = 10
+        fuel_left = 0 
+# 'CC' being the current city is equal to start city 
+        CC = SC   
+        can_complete_journey = True 
+        for _ in range(TC): 
+            fuel_left += F[CC] * mpg - D[CC] 
+            if fuel_left < 0: 
+                can_complete_journey = False 
+                break 
+                
+            CC = (CC + 1) % TC 
 
-# Output
-print(find_starting_city(city_distances, fuel, mpg))  # Output: 4
+        if can_complete_journey: 
+            return SC 
+# No valid starting city found     
+
+    return -1   
+
+
+# Sample Input 
+D = [5, 25, 15, 10, 15] 
+F = [1, 2, 1, 0, 3] 
+mpg = 10 
+
+# Output 
+print(find_starting_city(D, F, mpg))  # Output: 4 
