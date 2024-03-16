@@ -18,18 +18,18 @@ The index of the last city where the cumulative gas remains non-negative is the 
 
 ## Implementation:
 ### Input:
-D (city_distances): Array representing distances between neighboring cities.
-F (fuel): Array representing the amount of gas available at each city.
-mpg: Miles per gallon, representing the car's fuel efficiency.
+1) D (city_distances): Array representing distances between neighboring cities.
+2) F (fuel): Array representing the amount of gas available at each city.
+3) mpg: Miles per gallon, representing the car's fuel efficiency.
 
 ### Output:
 Index of the preferred starting city.
 
 ## Algorithm:
 1) Calculate total fuel required based on the total distance and car's MPG.
-2)Iterate through cities, calculating cumulative gas available starting from each city.
-3)Determine the last city where cumulative gas remains non-negative.
-4)Return the index of the preferred starting city.
+2) Iterate through cities, calculating cumulative gas available starting from each city.
+3) Determine the last city where cumulative gas remains non-negative.
+4) Return the index of the preferred starting city.
 
 ## Complexity Analysis:
 Time Complexity: O(n), where n is the number of cities.
