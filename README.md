@@ -33,7 +33,7 @@ Index of the preferred starting city.
 4) Give back the starting city's desired index.
 
 ## Complexity Analysis:
-- Time Complexity: O(n), where n is the number of cities.
+- Time Complexity: O(n^2), where n is the number of cities.
 - Space Complexity: O(1).
 
 ## Usage: 
