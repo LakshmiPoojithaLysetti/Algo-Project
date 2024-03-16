@@ -1,20 +1,21 @@
-# Algorithm for Finding Preferred Starting City
-Given a set of cities laid out in a circle, connected by a circular road, along with information about the distance between neighboring cities, the amount of gas available at each city, and the car's fuel efficiency (miles per gallon), the task is to design an algorithm to find the index of the preferred starting city. The preferred starting city is the one where you can start with an empty tank, visit all cities, and return back to the starting city with 0 or more gallons of fuel left.
+# Finding Preferred Starting City
+## Problem Statement:
+Given a circular layout of cities, each with a gas station that provides a specified amount of fuel, and the distances between surrounding cities, the task is to discover the ideal beginning city. The objective is to begin in one city, travel to every other city, and end up back in the beginning city with at least zero gallons of petrol remaining.
 
 ## Approach:
 ### 1) Calculate Fuel Required:
-Traverse through the cities and calculate the total distance to travel the circular road.
-Divide the total distance by the car's fuel efficiency (miles per gallon) to determine the total fuel required to complete the journey.
+Calculate the total distance the circular route will need to go as you pass through the cities.To calculate the entire amount of fuel needed to finish the trip, divide the whole distance by the car's fuel efficiency (miles per gallon).
 
 ### 2) Check Feasible Starting Cities:
-Iterate through each city and calculate the cumulative gas available starting from that city and check if it's sufficient to cover the total
+- Calculate the cumulative gas available beginning in each city as you go through them.
+- Also see if there is enough gas to cover the entire amount.
 
 ### 3)fuel required.
-If at any city, the cumulative gas becomes negative, it means it's not feasible to start from that city.
-Keep track of the index of the last city where the cumulative gas remains non-negative.
+- It is not possible to begin from any city if the cumulative gas there turns negative.
+- Monitor the final city's index where the cumulative gas is still positive.
 
 ### 4)Return Preferred Starting City:
-The index of the last city where the cumulative gas remains non-negative is the preferred starting city.
+The ideal starting city is the index of the final city where the cumulative gas is still non-negative.
 
 ## Implementation:
 ### Input:
@@ -25,17 +26,18 @@ The index of the last city where the cumulative gas remains non-negative is the 
 ### Output:
 Index of the preferred starting city.
 
-## Algorithm:
-1) Calculate total fuel required based on the total distance and car's MPG.
-2) Iterate through cities, calculating cumulative gas available starting from each city.
-3) Determine the last city where cumulative gas remains non-negative.
-4) Return the index of the preferred starting city.
+## Algorithm: 
+1) Determine the total amount of fuel used by multiplying the mileage driven by the car's MPG.
+2) Calculate the total amount of gas available starting from each city as you iterate through them.
+3) Find the final city in which the cumulative gas balance is positive.
+4) Give back the starting city's desired index.
 
 ## Complexity Analysis:
 - Time Complexity: O(n), where n is the number of cities.
 - Space Complexity: O(1).
 
-## Usage:
-- Provide input parameters: city_distances, fuel, and mpg.
-- Call the findPreferredStartingCity function with the input parameters.
-- Obtain the index of the preferred starting city as the output.
+## Usage: 
+- Enter the following input parameters: mpg, fuel, and city_distances.
+- Use the given parameters to invoke the findPreferredStartingCity function.
+- As the output, get the index of the desired beginning city.
+
